@@ -211,6 +211,9 @@ $new_content: "First time reference" !default;
 @import "http://foo.com/bar";
 @import url(foo);
 
+@import "foo.scss",
+"foo";
+
 // Partials
 
 @import "colors";
@@ -265,6 +268,14 @@ $new_content: "First time reference" !default;
   border-width: 3px;
 }
 
+// Extending white placeholder
+%errorShape {
+  border-width: 3px;
+}
+.seriousError {
+  @extend .error;
+  @extend %errorShape;
+}
 // Extending Complex Selectors
 
 .hoverlink {
